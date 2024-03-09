@@ -1,8 +1,12 @@
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <html>
-    <head></head>
+    <head>
+        <title>Things To Do</title>
+        <link href="webjars/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet" >
+    </head>
     <body>
-        <h1>${name} Things to do</h1>
+        <h1>My Things to do</h1>
+        <hr>
         <table>
             <thead>
                 <tr>
@@ -14,15 +18,20 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <c:forEach items="${Todos}" var="todo">
-                        <td>{todo.id}</td>
-                        <td>{todo.userName}</td>
-                        <td>{todo.description}</td>
-                        <td>{todo.status}</td>
-                    </c:forEach>
-                </tr>
+                
+                <c:forEach items="${Todos}" var="todo">
+                    <tr>
+                        <td>${todo.id}</td>
+                        <td>${todo.userName}</td>
+                        <td>${todo.description}</td>
+                        <td>${todo.targetDate}</td>
+                        <td>${todo.status}</td>
+                    </tr>
+                </c:forEach>
             </tbody>
         </table>
+
+        <script src="webjars/bootstrap/5.1.3/js/bootstrap.min.js"></script>
+        <script src="webjars/jquery/3.6.0/jquery.min.js"></script>
     </body>
 </html>

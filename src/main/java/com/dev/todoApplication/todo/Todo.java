@@ -7,9 +7,9 @@ public class Todo {
     private String userName;
     private String description;
     private LocalDate targetDate;
-    private boolean status;
+    private String status;
 
-    public Todo( long id, String userName,String description, LocalDate targetDate, boolean status ){
+    public Todo( long id, String userName,String description, LocalDate targetDate, String status ){
        super();
        this.id=id;
        this.userName=userName;
@@ -46,10 +46,10 @@ public class Todo {
         this.targetDate = targetDate;
     }
 
-    public boolean getSatus(){
+    public String getStatus(){
         return status;
     }
-    public void setStatus(boolean status) {
+    public void setStatus(String status) {
         this.status = status;
     }
 

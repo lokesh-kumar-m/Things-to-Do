@@ -10,8 +10,8 @@ import org.springframework.stereotype.Service;
 public class TodoService {
     private static List<Todo> createTodos=new ArrayList<>();
     static {
-        createTodos.add(new Todo(1, "Jean", "get Milk", LocalDate.now().plusDays(3), false));
-        createTodos.add(new Todo(2, "Jean", "Pay Electricity", LocalDate.now().plusDays(6), false));
+        createTodos.add(new Todo(1, "Jean", "get Milk", LocalDate.now().plusDays(3), "pending"));
+        createTodos.add(new Todo(2, "Jean", "Pay Electricity", LocalDate.now().plusDays(6), "pending"));
     }
 
     public List<Todo> findByUserName(String userName){

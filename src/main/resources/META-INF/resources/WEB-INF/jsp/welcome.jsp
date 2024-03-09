@@ -4,6 +4,7 @@
     </head>
     <body>
         <h1>Welcome ${name}</h1>
+        <hr>
         <div>
             <a href="/todo-list">manage My Todos</a>
             
