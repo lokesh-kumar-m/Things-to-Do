@@ -50,7 +50,10 @@ public class TodoController {
 
     @RequestMapping(value="/update-todo", method = RequestMethod.POST)
     public String updateTodo(@RequestParam long id, @RequestParam String updateField,@RequestParam String updatedValue){
-        //logger.debug(updatedValue);
+        logger.debug(updateField);
+        if(updateField.equals("Choose Field")|| updatedValue==""){
+            return "updateList";
+        }
         todoService.updateTodo(id,updateField, updatedValue);
         return "redirect:todo-list";
     }
