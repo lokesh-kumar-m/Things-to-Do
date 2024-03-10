@@ -15,7 +15,7 @@ public class TodoService {
     }
 
     public void addTodo( String itemName,String itemDescription, long days){
-        createTodos.add(new Todo(itemId, itemName, itemDescription, LocalDate.now().plusDays(days), "pending"));
+        createTodos.add(new Todo(++itemId, itemName, itemDescription, LocalDate.now().plusDays(days), "pending"));
     }
 
     public List<Todo> findByUserName(String userName){
