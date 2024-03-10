@@ -21,4 +21,36 @@ public class TodoService {
     public List<Todo> findByUserName(String userName){
         return createTodos;
     }
+
+    public List<Todo> deleteTodo(Long id){
+        for(int i=0;i<createTodos.size();i++){
+            if(createTodos.get(i).getId()==id){
+                createTodos.remove(i);
+            }
+        }
+        return createTodos;
+    }
+
+    public List<Todo> updateTodo(Long id, String field, String value){
+        for(int i=0;i<createTodos.size();i++){
+            if(createTodos.get(i).getId()==id){
+                if(field.equals("itemid")){
+                    createTodos.get(i).setId(Long.parseLong(value));  
+                }
+                else if(field.equals("itemname")){
+                    createTodos.get(i).setUserName(value);
+                }
+                else if(field.equals("itemdescription")){
+                    createTodos.get(i).setDescription(value);
+                }
+                else if(field.equals("itemdays")){
+                    createTodos.get(i).setTargetDate(LocalDate.now().plusDays(Long.parseLong(value)));
+                }
+                else{
+                    createTodos.get(i).setStatus(value);
+                }
+            }
+        }
+        return createTodos;
+    }
 }

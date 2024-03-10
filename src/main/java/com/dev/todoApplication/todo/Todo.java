@@ -5,6 +5,7 @@ import java.time.LocalDate;
 public class Todo {
     private long id;
     private String userName;
+//  @Size(min=10,message="Enter atleast 10 characters") validation    
     private String description;
     private LocalDate targetDate;
     private String status;

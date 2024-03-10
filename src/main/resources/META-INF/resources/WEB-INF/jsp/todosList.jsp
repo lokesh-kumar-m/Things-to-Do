@@ -1,4 +1,5 @@
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
+
     <html>
 
     <head>
@@ -29,19 +30,19 @@
                             <td>${todo.description}</td>
                             <td>${todo.targetDate}</td>
                             <td>${todo.status}</td>
-                            <td> <button type="" class="btn btn-success">Update</button></td>
-                            <td> <button type="" class="btn btn-warning">Delete</button></td>
+                            <td> <a href="/update-todo?id=${todo.id}" class="btn btn-success">Update</a></td>
+                            <td> <a href="delete-todo?id=${todo.id}" class="btn btn-warning">Delete</a></td>
                         </tr>
                     </c:forEach>
                 </tbody>
             </table>
             <!-- Button trigger modal -->
-            <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+            <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#addItems">
                 Add Item
             </button>
 
             <!-- Modal -->
-            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+            <div class="modal fade" id="addItems" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
                 aria-labelledby="staticBackdropLabel" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
@@ -66,12 +67,10 @@
                                   <button type="submit" class="btn btn-primary">Add</button>
                               </form>
                         </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        </div>
                     </div>
                 </div>
             </div>
+
         </div>
         <script src="webjars/bootstrap/5.1.3/js/bootstrap.min.js"></script>
         <script src="webjars/jquery/3.6.0/jquery.min.js"></script>
