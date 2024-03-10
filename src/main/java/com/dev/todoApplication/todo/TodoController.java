@@ -27,11 +27,9 @@ public class TodoController {
     }
 
     @RequestMapping(value = "/todo-list", method = RequestMethod.POST)
-    public String updateTodos(@RequestParam long itemId, @RequestParam String itemName, @RequestParam String itemDescription, @RequestParam long days, @RequestParam String itemStatus, ModelMap model){
-        todoService.addTodo(itemId, itemName, itemDescription, days, itemStatus);
-        List<Todo> list=todoService.findByUserName(" ");
-        model.put("Todos",list);
-        return "todosList";
+    public String updateTodos( @RequestParam String itemName, @RequestParam String itemDescription, @RequestParam long days, ModelMap model){
+        todoService.addTodo( itemName, itemDescription, days);
+        return "redirect:todo-list";
     }
    
 }

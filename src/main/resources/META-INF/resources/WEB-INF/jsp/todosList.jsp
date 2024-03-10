@@ -14,7 +14,7 @@
                 <thead>
                     <tr>
                         <th>Id</th>
-                        <th>Name</th>
+                        <th>Person</th>
                         <th>Description</th>
                         <th>Do By</th>
                         <th>Status</th>
@@ -36,7 +36,7 @@
                 </tbody>
             </table>
             <!-- Button trigger modal -->
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+            <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                 Add Item
             </button>
 
@@ -52,11 +52,7 @@
                         <div class="modal-body">
                             <form method="post">
                                 <div class="mb-3">
-                                  <label for="itemid" class="form-label">Item id</label>
-                                  <input type="number" class="form-control" id="itemid" name="itemId">
-                                </div>
-                                <div class="mb-3">
-                                  <label for="itemname" class="form-label">Item Name</label>
+                                  <label for="itemname" class="form-label">Name</label>
                                   <input type="text" class="form-control" id="itemname" name="itemName">
                                 </div>
                                 <div class="mb-3">
@@ -66,10 +62,6 @@
                                 <div class="mb-3">
                                   <label for="targetdays" class="form-label">Days to complete</label>
                                   <input type="number" class="form-control" id="targetdays" name="days">
-                                </div>
-                                <div class="mb-3">
-                                  <label for="itemstatus" class="form-label">Item Status</label>
-                                  <input type="text" class="form-control" id="itemstatus" name="itemStatus">
                                 </div>
                                   <button type="submit" class="btn btn-primary">Add</button>
                               </form>
