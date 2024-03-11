@@ -2,11 +2,11 @@
 
 <head>
     <title>Login</title>
-    <link href="webjars/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
+    <link href="webjars/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">  
 </head>
 
 <body>
-    <div class="container justify-content-md-center">
+    <div class="container justify-content-md-center" id="box">
         <h1>Login</h1>
         <pre>${ErrorMessage}</pre>
         <form method="post">
@@ -23,6 +23,4 @@
             <button type="" class="btn btn-primary">SignUp</button>
         </form>
     </div>
-</body>
-
-</html>
+<%@ include file="common/footer.jspf" %>

@@ -1,13 +1,8 @@
-<html>
-
-<head>
-    <title>Login</title>
-    <link href="webjars/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
-</head>
-
-<body>
+<%@ include file="common/header.jspf" %>
+    <%@ include file="common/navigation.jspf" %>
     <div class="container justify-content-md-center">
-        <h1 class="justify-content-md-center">Update ${id} fields</h1>
+        <h1 class="justify-content-md-center">Update id ${id} fields</h1>
+        <pre>${Error}</pre>
         <form method="post">
             <div class="mb-3">
                 <select class="form-select" name="updateField" aria-label="Default select example">
@@ -24,6 +19,4 @@
             <button type="submit" class="btn btn-primary">update</button>
         </form>
     </div>
-</body>
-
-</html>
+<%@ include file="common/footer.jspf" %>

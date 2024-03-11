@@ -1,13 +1,5 @@
-<%@ taglib prefix="c" uri="jakarta.tags.core" %>
-
-    <html>
-
-    <head>
-        <title>TOD</title>
-        <link href="webjars/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
-    </head>
-
-    <body>
+<%@ include file="common/header.jspf" %>
+    <%@ include file="common/navigation.jspf" %>
         <div class="container">
             <h1>My Things to do</h1>
             <hr>
@@ -53,27 +45,23 @@
                         <div class="modal-body">
                             <form method="post">
                                 <div class="mb-3">
-                                  <label for="itemname" class="form-label">Name</label>
-                                  <input type="text" class="form-control" id="itemname" name="itemName">
+                                    <label for="itemname" class="form-label">Name</label>
+                                    <input type="text" class="form-control" id="itemname" name="itemName">
                                 </div>
                                 <div class="mb-3">
-                                  <label for="itemdescription" class="form-label">Item Description</label>
-                                  <input type="text" class="form-control" id="itemdescription" name="itemDescription">
+                                    <label for="itemdescription" class="form-label">Item Description</label>
+                                    <input type="text" class="form-control" id="itemdescription" name="itemDescription">
                                 </div>
                                 <div class="mb-3">
-                                  <label for="targetdays" class="form-label">Days to complete</label>
-                                  <input type="number" class="form-control" id="targetdays" name="days">
+                                    <label for="targetdays" class="form-label">Days to complete</label>
+                                    <input type="number" class="form-control" id="targetdays" name="days">
                                 </div>
-                                  <button type="submit" class="btn btn-primary">Add</button>
-                              </form>
+                                <button type="submit" class="btn btn-primary">Add</button>
+                            </form>
                         </div>
                     </div>
                 </div>
             </div>
 
         </div>
-        <script src="webjars/bootstrap/5.1.3/js/bootstrap.min.js"></script>
-        <script src="webjars/jquery/3.6.0/jquery.min.js"></script>
-    </body>
-
-    </html>
+<%@ include file="common/footer.jspf" %>

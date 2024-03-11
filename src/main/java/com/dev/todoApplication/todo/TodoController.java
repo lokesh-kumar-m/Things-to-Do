@@ -49,9 +49,10 @@ public class TodoController {
     }
 
     @RequestMapping(value="/update-todo", method = RequestMethod.POST)
-    public String updateTodo(@RequestParam long id, @RequestParam String updateField,@RequestParam String updatedValue){
-        logger.debug(updateField);
+    public String updateTodo(@RequestParam long id, @RequestParam String updateField,@RequestParam String updatedValue, ModelMap model){
+        //logger.debug(updateField);
         if(updateField.equals("Choose Field")|| updatedValue==""){
+            model.put("Error","Enter valid fields to update");
             return "updateList";
         }
         todoService.updateTodo(id,updateField, updatedValue);
