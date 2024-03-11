@@ -3,6 +3,7 @@ package com.dev.todoApplication.todo;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Predicate;
 
 import org.springframework.stereotype.Service;
 
@@ -10,8 +11,9 @@ import org.springframework.stereotype.Service;
 public class TodoService {
     private static List<Todo> createTodos=new ArrayList<>();
     private static int itemId=0;
-    static {
-        createTodos.add(new Todo(++itemId, "Jean", "get Milk", LocalDate.now().plusDays(3), "pending"));
+    static{
+        createTodos.add(new Todo(++itemId, "Admin", "get Mjolk", LocalDate.now().plusDays(2), "pending"));
+
     }
 
     public void addTodo( String itemName,String itemDescription, long days){
@@ -19,7 +21,9 @@ public class TodoService {
     }
 
     public List<Todo> findByUserName(String userName){
-        return createTodos;
+        Predicate<? super Todo> predicate= todo -> todo.getUserName().equalsIgnoreCase(userName);
+        return createTodos.stream().filter(predicate).toList();
+        //return createTodos;
     }
 
     public List<Todo> deleteTodo(Long id){
