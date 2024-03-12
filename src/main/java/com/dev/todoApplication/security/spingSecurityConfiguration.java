@@ -23,16 +23,22 @@ public class spingSecurityConfiguration {
      
     @Bean
     public InMemoryUserDetailsManager createUserDetails(){
+        
+        UserDetails userDetails1 = getEcodedUserDetails("admin", "Admin");
+        UserDetails userDetails2 = getEcodedUserDetails("john", "Admin");
+        return new InMemoryUserDetailsManager(userDetails1,userDetails2);
+    }
+
+    private UserDetails getEcodedUserDetails(String username, String password) {
         Function<String, String> passwordEncoder= input -> passwordEncoder().encode(input);
         
         UserDetails userDetails=User.builder()
         .passwordEncoder(passwordEncoder) 
-        .username("Admin")
-        .password("Admin")
+        .username(username)
+        .password(password)
         .roles("USER","ADMIN")
         .build();
-        
-        return new InMemoryUserDetailsManager(userDetails);
+        return userDetails;
     }
 
     @Bean
@@ -42,6 +48,7 @@ public class spingSecurityConfiguration {
 
 //FilterChain bean serves as an entry point for all http requests
 //It consists of various filters responsible for handling authentication, authorization, CSRF protection, etc
+    @SuppressWarnings("deprecation")
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
     http.authorizeRequests(authorizeRequests -> authorizeRequests.anyRequest()
@@ -49,6 +56,7 @@ public class spingSecurityConfiguration {
       .httpBasic(withDefaults())
       .formLogin(withDefaults())  
       .csrf(AbstractHttpConfigurer::disable);
+    http.headers().frameOptions().disable();
     return http.build();
 }
 

@@ -2,7 +2,17 @@ package com.dev.todoApplication.todo;
 
 import java.time.LocalDate;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+
+//This entity is mapped to a table in database
+//When we have a entity we also need a peimary key(@Id)
+//As soon as spring sees Entity it creates table in h2
+@Entity
 public class Todo {
+    @Id
+    @GeneratedValue
     private long id;
     private String userName;
 //  @Size(min=10,message="Enter atleast 10 characters") validation    
@@ -17,6 +27,9 @@ public class Todo {
        this.description=description;
        this.targetDate=targetDate;
        this.status=status;
+    }
+    public Todo(){
+
     }
 
     public long getId() {

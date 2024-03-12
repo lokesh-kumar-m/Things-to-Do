@@ -6,7 +6,6 @@
             <table class="table table-striped-columns">
                 <thead>
                     <tr>
-                        <th>Id</th>
                         <th>Person</th>
                         <th>Description</th>
                         <th>Do By</th>
@@ -17,7 +16,6 @@
 
                     <c:forEach items="${Todos}" var="todo">
                         <tr>
-                            <td>${todo.id}</td>
                             <td>${todo.userName}</td>
                             <td>${todo.description}</td>
                             <td>${todo.targetDate}</td>

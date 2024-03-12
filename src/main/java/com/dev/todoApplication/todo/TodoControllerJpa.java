@@ -3,32 +3,37 @@ package com.dev.todoApplication.todo;
 import java.util.List;
 
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
-//import org.springframework.stereotype.Controller;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 
+@Controller
 
-//@Controller
+public class TodoControllerJpa {
 
-public class TodoController {
-
+    
     org.slf4j.Logger logger=LoggerFactory.getLogger(getClass());
 
-    private TodoService todoService;
-    public TodoController(TodoService todoService){
+    public TodoControllerJpa(TodoService todoService, TodoRepository todoRepository){
         super();
         this.todoService=todoService;
+        this.todoRepository=todoRepository;
     }
+    private TodoService todoService;
+    @Autowired
+    private TodoRepository todoRepository;
 
     @RequestMapping(value="/todo-list", method = RequestMethod.GET)
     public String getTodos(ModelMap model){
         String name=getName(model);
-        List<Todo> list=todoService.findByUserName(name);
+        logger.debug(name);
+        List<Todo> list=todoRepository.findByUserName(name);
         model.put("Todos",list);
         return "todosList";
     }
