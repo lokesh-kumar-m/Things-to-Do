@@ -35,11 +35,11 @@ public class TodoService {
         return createTodos;
     }
 
-    public List<Todo> updateTodo(Long id, String field, String value){
+    public List<Todo> updateTodo(int id, String field, String value){
         for(int i=0;i<createTodos.size();i++){
             if(createTodos.get(i).getId()==id){
                 if(field.equals("itemid")){
-                    createTodos.get(i).setId(Long.parseLong(value));  
+                    createTodos.get(i).setId(Integer.parseInt(value));  
                 }
                 else if(field.equals("itemname")){
                     createTodos.get(i).setUserName(value);

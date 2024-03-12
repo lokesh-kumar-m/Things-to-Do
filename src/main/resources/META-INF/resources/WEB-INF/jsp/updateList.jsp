@@ -7,8 +7,6 @@
             <div class="mb-3">
                 <select class="form-select" name="updateField" aria-label="Default select example">
                     <option selected>Choose Field</option>
-                    <option value="itemid">Id</option>
-                    <option value="itemname">Person</option>
                     <option value="itemdescription">Description</option>
                     <option value="itemdays">Do By</option>
                     <option value="itemstatus">Status</option>

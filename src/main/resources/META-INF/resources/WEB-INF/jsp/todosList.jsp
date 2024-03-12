@@ -6,7 +6,6 @@
             <table class="table table-striped-columns">
                 <thead>
                     <tr>
-                        <th>Person</th>
                         <th>Description</th>
                         <th>Do By</th>
                         <th>Status</th>
@@ -16,7 +15,6 @@
 
                     <c:forEach items="${Todos}" var="todo">
                         <tr>
-                            <td>${todo.userName}</td>
                             <td>${todo.description}</td>
                             <td>${todo.targetDate}</td>
                             <td>${todo.status}</td>
@@ -42,10 +40,6 @@
                         </div>
                         <div class="modal-body">
                             <form method="post">
-                                <div class="mb-3">
-                                    <label for="itemname" class="form-label">Name</label>
-                                    <input type="text" class="form-control" id="itemname" name="itemName">
-                                </div>
                                 <div class="mb-3">
                                     <label for="itemdescription" class="form-label">Item Description</label>
                                     <input type="text" class="form-control" id="itemdescription" name="itemDescription">
